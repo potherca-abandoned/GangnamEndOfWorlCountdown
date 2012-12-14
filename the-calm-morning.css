@@ -1,7 +1,7 @@
     @import url(http://fonts.googleapis.com/css?family=Capriola);
 
     html { 
-        background: gainsboro url(PSY-Gangnam-Explosion.jpg) no-repeat center center fixed; 
+        background: gainsboro url(the-dancing-horse.jpg) no-repeat center center fixed; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -49,16 +49,22 @@
 
 
     q {
-        display: block;
         color: #777;
-        position: relative;
+        display: block;
+        font-size: 72%;
         margin: 0 auto;
-        width: 32em;
+        position: relative;
         quotes: "\201C" "\201D" "\2018" "\2019";
     }
     
     a {
-        color: black;
+        color: #999;
+        text-decoration: none;
+    }
+    
+    a:hover, a:active {
+        color: #999;
+        border-bottom: 1px solid black;
     }
     
     div {
