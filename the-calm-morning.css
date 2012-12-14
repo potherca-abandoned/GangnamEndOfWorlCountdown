@@ -70,7 +70,7 @@ body {
     position: relative;
     margin: 2em auto;
     min-height: 16.25em;
-    height: 19.25em;
+    height: 16.25em;
     /**/
 }
 
@@ -139,7 +139,8 @@ body {
 }
 
 /* Portrait phones and down */
-@media (min-width: 310px) and (max-width: 320px) {
+/*@media (max-width: 320px) {*/
+@media (max-width: 400px) {
     body {
         height: 20em;
         margin: 0.5em;
@@ -158,21 +159,23 @@ body {
         width: 80%;
     }
 
-}
+/*}*/
 
-@media (max-width: 310px) {
+/*@media (max-width: 310px) {*/
     body {
         border: none;
         border-radius: 0;
         box-shadow: none;
         height: 100%;
         margin: 0;
+        padding: 1em 0;
         width: 100%;
+        top: 0;
     }
 
     .addthis_toolbox {
         float: none;
-        margin: 1em;
+        margin: 2em 1em;
         white-space: nowrap;
         left: -0.75em;
         position: absolute;
