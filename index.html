@@ -1,0 +1,113 @@
+<!DOCTYP html>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Countdown to the End of the World, Gangnam Style.</title>
+    <link href='http://fonts.googleapis.com/css?family=Kite+One' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+
+    <style>
+        html {
+            background-color: gainsboro;
+        }
+
+        body {
+            width: 40em;
+            position: relative;
+            margin: 2em auto;
+            font-family: 'Kite One', sans-serif;
+
+            background-color: white;
+            padding: 1em;
+            border-radius: 1em;
+            box-shadow: 0 0 1em;
+        }
+        
+        h1 {
+            font-size: 150%;
+        }
+
+        p {
+            margin: 1em;
+        }
+
+        a {
+            color: black;
+        }
+        
+        #countdown {
+            font-weight: bold;
+            font-size: 200%;
+        }
+    </style>
+  
+
+
+    <script>
+    $(window).load(function(){
+        (function ($) {
+            function getCountFromYoutube(p_sVideoId, p_oCallback) {
+                var sCountDown;
+
+                $.ajax({
+                      "url": 'http://query.yahooapis.com/v1/public/yql'
+                    , "async" : false
+                    , "data": {
+                        "q": 'select * from html where url="http://www.youtube.com/watch?v='+p_sVideoId+'" and xpath="//span[@class=\'watch-view-count\']"'
+                        , "format": 'json'
+                    }
+                    , "dataType" : 'jsonp'
+                    , "complete" : function () {
+                        p_oCallback(sCountDown);
+                    }
+                    , "success": function (p_oResponseData) {
+                        var iViews, iCountDown;
+                        
+                        if (p_oResponseData.query.count && parseInt(p_oResponseData.query.count, 10) > 0) {
+                            iViews = parseInt(p_oResponseData.query.results.span.content.replace(/,/g, ''), 10);
+                            iCountDown = 1000000000 - iViews;
+                            
+                            //add Commas
+                            sCountDown = iCountDown + '';
+                            var rExpression = /(\d+)(\d{3})/;
+                            while (rExpression.test(sCountDown)) {
+                                sCountDown = sCountDown.replace(rExpression, '$1' + ',' + '$2');
+                            }
+                        }
+                    }
+                });
+
+                return sCountDown;
+            }
+
+            window.getCountFromYoutube = getCountFromYoutube;
+        }(jQuery));
+
+        getCountFromYoutube('9bZkp7q19f0', function(p_sCountdown){
+            $('#countdown').text(p_sCountdown);
+        });
+
+    }); 
+    </script>
+</head>
+
+<body>
+  <h1>The world will End, Gangnam Style!</h1>
+
+    <p>
+        As <a href="http://www.huffingtonpost.co.uk/2012/12/12/december-21-mayan-end-world-gangnam-style-psy-nostradamus_n_2285027.html"
+        >reported by the Huffington Post</a> and <a href="https://www.google.com/#hl=en&amp;q=end+of+the+world+gangnam+style"
+        >other fine sources on the internet</a>, Nostradamus predicted the the 
+        world will end on December 21th when <a href="http://www.youtube.com/watch?v=9bZkp7q19f0"
+        >PSY's "Gangnam Style" video</a> reaches one billion views.
+    </p>
+
+    <p>
+        At this moment we only need <span id="countdown">56,621,798</span> more views!
+        <!--
+            2012/12/13: 56,621,798        
+        -->
+    </p>
+</body>
+</html>
