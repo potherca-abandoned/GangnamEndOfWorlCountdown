@@ -64,37 +64,22 @@
 
 
 /* Default Fallback */
-body {
-    /**/
-    max-width: 40em;
-    position: relative;
-    margin: 2em auto;
-    min-height: 16.25em;
-    height: 16.25em;
-    /**/
-}
+    html {
+        position: relative
+    }
 
-/* Large desktop */
-@media (min-width: 1200px) {
     body {
-        /*background: lime;*/
+        bottom: 0;
+        height: 16.25em;
+        left:0;
+        margin: auto;
+        max-width: 40em;
+        min-height: 16.25em;
+        position: absolute;
+        right:0;
+        top: 0;
     }
-}
- 
-/* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) {
-    body {
-        /*background: yellow;*/
-    }
-}
- 
-/* Landscape phone to portrait tablet */
-@media (max-width: 767px) {
-    body {
-        /*background: orange;*/
-    }
-}
- 
+
 /* Landscape phones and down */
 @media (max-width: 480px) {
     /*
@@ -103,10 +88,10 @@ body {
         contrast higher
     */
     body {
+        height: 16.25em;
         margin: 1em;
         opacity: 0.85;
         position: relative;
-        height: 16.25em;
     }
 
     h1 {
@@ -138,14 +123,21 @@ body {
     }
 }
 
-/* Portrait phones and down */
-/*@media (max-width: 320px) {*/
+/* Portrait phones and down
+   Usually we would use 320px for a regular phone width but because of the size
+   of our content we are a bit more greedy
+*/
 @media (max-width: 400px) {
     body {
-        height: 20em;
-        margin: 0.5em;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        height: 100%;
+        margin: 0;
         min-width: 16em;
-        top: 3em;
+        padding: 1em 0;
+        top: 0;
+        width: 100%;
     }
 
     h1 {
@@ -159,20 +151,6 @@ body {
         width: 80%;
     }
 
-/*}*/
-
-/*@media (max-width: 310px) {*/
-    body {
-        border: none;
-        border-radius: 0;
-        box-shadow: none;
-        height: 100%;
-        margin: 0;
-        padding: 1em 0;
-        width: 100%;
-        top: 0;
-    }
-
     .addthis_toolbox {
         float: none;
         margin: 2em 1em;
@@ -181,4 +159,5 @@ body {
         position: absolute;
     }
 }
-    /*EOF*/
+
+/*EOF*/
