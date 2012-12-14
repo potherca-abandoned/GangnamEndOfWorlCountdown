@@ -16,21 +16,6 @@
         border: 1px solid rgba(77, 121, 255, 1);
 
         font-family: 'Capriola', sans-serif;
-       /* 
-        max-width: 40em;
-        min-height: 12em;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        margin: 1em -20em;
-    /*/
-        max-width: 40em;
-        position: relative;
-        margin: 2em auto;
-        min-height: 16.25em;
-        height: 16.25em;
-/**/
-
     }
     
     h1 {
@@ -40,21 +25,26 @@
 
     p {
         margin: 1em;
+        text-align: justify;
+        text-justify: newspaper;
     }
 
     p span {
         font-weight: bold;
         font-size: 200%;
+        line-height: 0.50em;
+        vertical-align: bottom;
     }
 
 
     q {
         color: #777;
         display: block;
-        font-size: 72%;
+        font-size: 71%;
         margin: 0 auto;
         position: relative;
         quotes: "\201C" "\201D" "\2018" "\2019";
+        text-align: center;
     }
     
     a {
@@ -66,30 +56,126 @@
         color: #999;
         border-bottom: 1px solid black;
     }
-    
-    div {
-        float: right;        
-    }
+
+    .addthis_toolbox {float: right; margin-top: 1em;}
+    .addthis_toolbox a {border-bottom: none;}
     .addthis_toolbox .addthis_button_pinterest_pinit {margin-right:0;}
     .addthis_toolbox .addthis_button_pinterest_pinit iframe {width: 50px !important;}
 
 
+/* Default Fallback */
+body {
+    /**/
+    max-width: 40em;
+    position: relative;
+    margin: 2em auto;
+    min-height: 16.25em;
+    height: 19.25em;
+    /**/
+}
 
 /* Large desktop */
 @media (min-width: 1200px) {
+    body {
+        /*background: lime;*/
+    }
 }
  
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
+    body {
+        /*background: yellow;*/
+    }
 }
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+    body {
+        /*background: orange;*/
+    }
 }
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
+    /*
+        Because the screen is small the background image is hidden so we make
+        the text block see-through, which means we also need to make the link
+        contrast higher
+    */
+    body {
+        margin: 1em;
+        opacity: 0.85;
+        position: relative;
+        height: 16.25em;
+    }
+
+    h1 {
+        font-size: 140%;
+    }
+
+    p {
+        font-size: 80%;
+
+        -webkit-hyphens: auto;
+           -moz-hyphens: auto;
+            -ms-hyphens: auto;
+             -o-hyphens: auto;
+        hyphens: auto;
+    }
+
+    q {
+        width: 70%;
+    }
+
+
+    a {
+        color: #666;
+        border-bottom: 1px solid;
+    }
+
+    a:hover {
+        color: #000;
+    }
 }
 
+/* Portrait phones and down */
+@media (min-width: 310px) and (max-width: 320px) {
+    body {
+        height: 20em;
+        margin: 0.5em;
+        min-width: 16em;
+        top: 3em;
+    }
 
-/*EOF*/
+    h1 {
+        font-size: 150%;
+    }
+
+    p {
+        font-size: 90%;
+    }
+    q {
+        width: 80%;
+    }
+
+}
+
+@media (max-width: 310px) {
+    body {
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        height: 100%;
+        margin: 0;
+        width: 100%;
+    }
+
+    .addthis_toolbox {
+        float: none;
+        margin: 1em;
+        white-space: nowrap;
+        left: -0.75em;
+        position: absolute;
+    }
+}
+    /*EOF*/
