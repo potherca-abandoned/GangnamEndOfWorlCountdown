@@ -64,10 +64,6 @@
 
 
 /* Default Fallback */
-    html {
-        position: relative
-    }
-
     body {
         bottom: 0;
         height: 16.25em;
