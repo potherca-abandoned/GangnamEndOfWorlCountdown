@@ -1,0 +1,89 @@
+    @import url(http://fonts.googleapis.com/css?family=Capriola);
+
+    html { 
+        background: gainsboro url(PSY-Gangnam-Explosion.jpg) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    
+    body {
+        background-color: white;
+        padding: 1em;
+        border-radius: 1em;
+        box-shadow: 0 0 1em rgba(77, 121, 255, 0.7);
+        border: 1px solid rgba(77, 121, 255, 1);
+
+        font-family: 'Capriola', sans-serif;
+       /* 
+        max-width: 40em;
+        min-height: 12em;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        margin: 1em -20em;
+    /*/
+        max-width: 40em;
+        position: relative;
+        margin: 2em auto;
+        min-height: 16.25em;
+        height: 16.25em;
+/**/
+
+    }
+    
+    h1 {
+        font-size: 150%;
+        text-align: center;
+    }
+
+    p {
+        margin: 1em;
+    }
+
+    p span {
+        font-weight: bold;
+        font-size: 200%;
+    }
+
+
+    q {
+        display: block;
+        color: #777;
+        position: relative;
+        margin: 0 auto;
+        width: 32em;
+        quotes: "\201C" "\201D" "\2018" "\2019";
+    }
+    
+    a {
+        color: black;
+    }
+    
+    div {
+        float: right;        
+    }
+    .addthis_toolbox .addthis_button_pinterest_pinit {margin-right:0;}
+    .addthis_toolbox .addthis_button_pinterest_pinit iframe {width: 50px !important;}
+
+
+
+/* Large desktop */
+@media (min-width: 1200px) {
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+}
+
+
+/*EOF*/
