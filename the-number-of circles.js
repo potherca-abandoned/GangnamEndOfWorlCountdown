@@ -6,7 +6,7 @@
               "url": 'http://query.yahooapis.com/v1/public/yql'
             , "async" : false
             , "data": {
-                "q": 'select * from html where url="http://www.youtube.com/watch?v='+p_sVideoId+'" and xpath="//span[@class=\'watch-view-count\']"'
+                "q": 'select * from html where url="http://www.youtube.com/watch?v='+p_sVideoId+'" and xpath="//*[@class=\'watch-view-count\']"'
                 , "format": 'json'
             }
             , "dataType" : 'jsonp'
