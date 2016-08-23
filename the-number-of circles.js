@@ -15,7 +15,7 @@
             }
             , "success": function (p_oResponseData) {                
                 if (p_oResponseData.query.count && parseInt(p_oResponseData.query.count, 10) > 0) {
-                    iViews = parseInt(p_oResponseData.query.results.span.content.replace(/,/g, ''), 10);
+                    iViews = parseInt(p_oResponseData.query.results.div.content.replace(/,/g, ''), 10);
                 }
             }
         });
