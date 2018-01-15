@@ -3,10 +3,10 @@
         var iViews;
 
         $.ajax({
-              "url": 'http://query.yahooapis.com/v1/public/yql'
+              "url": 'https://query.yahooapis.com/v1/public/yql'
             , "async" : false
             , "data": {
-                "q": 'select * from html where url="http://www.youtube.com/watch?v='+p_sVideoId+'" and xpath="//*[@class=\'watch-view-count\']"'
+                "q": 'select * from html where url="https://www.youtube.com/watch?v='+p_sVideoId+'" and xpath="//*[@class=\'watch-view-count\']"'
                 , "format": 'json'
             }
             , "dataType" : 'jsonp'
@@ -51,7 +51,7 @@ $(window).load(function(){
             $('h1').text('The world did not end Gangnam Style.');
             $('p.intro').html(
                   'Dispite of Nostradamus\' prediction (as <a '
-                + 'href="http://www.huffingtonpost.co.uk/2012/12/12/december-21-mayan-end-world-gangnam-style-psy-nostradamus_n_2285027.html"'
+                + 'href="https://www.huffingtonpost.co.uk/2012/12/12/december-21-mayan-end-world-gangnam-style-psy-nostradamus_n_2285027.html"'
                 + '>reported by the Huffington Post</a> and <a '
                 + 'href="https://www.google.com/#hl=en&amp;q=end+of+the+world+gangnam+style"'
                 + '>other fine sources on the internet</a>) the world did not end on '
